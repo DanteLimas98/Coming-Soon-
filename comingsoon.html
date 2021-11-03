@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title> Proximamente FLUIDTEK </title>
+		<link rel="stylesheet" href="style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	
+	<body>
+		<div class="wrapper">
+		<div class="title"> Proximamente </span> , siguenos <br> para más noticias! </div>
+		<form action="#" class="form">
+			<div class="email-field">
+				<input type="email" placeholder="Ingresa tu correo">
+				<button> Suscribete </button>
+			</div>
+		</form>
+		
+		<div class="count-down">
+			<div class="timer day">
+				<div class="count">
+					<div class="numb"> 00 </div>
+					<div class="text"> Dias </div>
+				</div>
+			</div>
+			
+			<div class="timer hour">
+				<div class="count">
+					<div class="numb"> 00 </div>
+					<div class="text"> Horas </div>
+				</div>
+			</div>	
+		
+			<div class="timer min">
+				<div class="count">
+					<div class="numb"> 00 </div>
+					<div class="text"> Minutos </div>
+				</div>
+			</div>	
+			
+			<div class="timer sec">
+				<div class="count">
+					<div class="numb"> 00 </div>
+					<div class="text"> Segundos </div>
+				</div>
+			</div>	
+		</div>
+		</div>
+		
+		<script>
+		const day = document.querySelector (".day .numb");
+		const hour = document.querySelector (".hour .numb");
+		const min = document.querySelector (".min .numb");
+		const sec = document.querySelector (".sec .numb");
+		var timer = setInterval(()=>{
+			var currentDate = new Date().getTime();
+			var launchDate = new Date('Sep 18, 2021 11:00:00').getTime();
+			var duration =  launchDate - currentDate ;
+			var days = Math.floor(duration / (1000*60*60*24));
+			var hours = Math.floor((duration % (1000*60*60*24)) / (1000*60*60));
+			var minutes = Math.floor((duration % (1000*60*60)) / (1000*60));
+			var seconds = Math.floor((duration % (1000*60)) / 1000);
+			day.innerHTML = days;
+			hour.innerHTML = hours;
+			min.innerHTML = minutes;
+			sec.innerHTML = seconds
+		},1000);
+		</script>
+		
+	</body>
+<html>
